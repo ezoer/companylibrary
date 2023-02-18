@@ -1,0 +1,51 @@
+{
+    "name": "company/company-library",
+    "description": "A useful library",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "company",
+            "email": "hello@company.com"
+        }
+    ],
+    "require": {
+        "othercompany/otherlibrary": "^1.0"
+    },
+    "config": {
+        "optimize-autoloader": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Company\\CompanyLib\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "othercompany/otherlibrary",
+                "type": "library",
+                "description": "Eases the integration of othercompany APIs into company's useful library",
+                "homepage": "https://otherlibraryportal.othercompany.com",
+                "version": "1.0",
+                "dist": {
+                    "url": "repository/othercompany-otherlibrary-1.2.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "php": ">=5.6.1",
+                    "phpseclib/phpseclib": "3.0.18"
+                },
+                "config": {
+                    "optimize-autoloader": true
+                },
+                "autoload": {
+                    "classmap": ["api.php"]
+                },
+                "minimum-stability": "dev"
+            }
+        }
+    ]
+}
